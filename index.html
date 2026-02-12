@@ -1,507 +1,171 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  
-  
-  <title>华为OD上岸指南</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="华为OD备考资源站，提供最新机考真题、面试经验、技术干货，助你成功上岸。">
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>华为OD上岸指南 - 专注华为OD机考、面试真题与经验分享</title><meta name="author" content="OD备考君"><meta name="copyright" content="OD备考君"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="华为OD备考资源站，提供最新机考真题、面试经验、技术干货，助你成功上岸。">
 <meta property="og:type" content="website">
 <meta property="og:title" content="华为OD上岸指南">
 <meta property="og:url" content="https://misayaone.github.io/my_website/index.html">
 <meta property="og:site_name" content="华为OD上岸指南">
 <meta property="og:description" content="华为OD备考资源站，提供最新机考真题、面试经验、技术干货，助你成功上岸。">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://img.icons8.com/color/96/000000/programmer.png">
 <meta property="article:author" content="OD备考君">
 <meta property="article:tag" content="华为OD, OD机考, 华为OD面试, Java面试题">
 <meta name="twitter:card" content="summary">
-  
-    <link rel="alternate" href="/my_website/atom.xml" title="华为OD上岸指南" type="application/atom+xml">
-  
-  
-    <link rel="shortcut icon" href="/my_website/favicon.png">
-  
-  
-  
-<link rel="stylesheet" href="/my_website/css/style.css">
-
-  
-    
-<link rel="stylesheet" href="/my_website/fancybox/jquery.fancybox.min.css">
-
-  
-  
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.2.0/css/fork-awesome.min.css">
-
-<meta name="generator" content="Hexo 7.3.0"></head>
-
-<body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/my_website/" id="logo">华为OD上岸指南</a>
-      </h1>
+<meta name="twitter:image" content="https://img.icons8.com/color/96/000000/programmer.png"><script type="application/ld+json"></script><link rel="shortcut icon" href="/my_website/img/favicon.png"><link rel="canonical" href="https://misayaone.github.io/my_website/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/my_website/css/index.css?v=5.5.4"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.1.0/css/all.min.css"><script>
+    (() => {
       
-        <h2 id="subtitle-wrap">
-          <a href="/my_website/" id="subtitle">专注华为OD机考、面试真题与经验分享</a>
-        </h2>
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/my_website/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":false},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'null',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.13.0/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '华为OD上岸指南',
+  isHighlightShrink: false,
+  isToc: false,
+  pageType: 'home'
+}</script><meta name="generator" content="Hexo 7.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="https://img.icons8.com/color/96/000000/programmer.png" onerror="this.onerror=null;this.src='/my_website/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/my_website/archives/"><div class="headline">文章</div><div class="length-num">4</div></a><a href="/my_website/tags/"><div class="headline">标签</div><div class="length-num">5</div></a><a href="/my_website/categories/"><div class="headline">分类</div><div class="length-num">3</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/my_website/"><i class="fa-fw fa fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/my_website/categories/Java"><i class="fa-fw fa fa-coffee"></i><span> Java面试题</span></a></div><div class="menus_item"><a class="site-page" href="/my_website/categories/OD%E6%9C%BA%E8%80%83"><i class="fa-fw fa fa-code"></i><span> OD机考真题</span></a></div><div class="menus_item"><a class="site-page" href="/my_website/categories/%E7%BB%8F%E9%AA%8C%E5%88%86%E4%BA%AB"><i class="fa-fw fa fa-book"></i><span> 上岸经验</span></a></div><div class="menus_item"><a class="site-page" href="/my_website/archives"><i class="fa-fw fa fa-archive"></i><span> 归档</span></a></div></div></div></div><div class="page" id="body-wrap"><header class="full_page" id="page-header"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/my_website/"><span class="site-name">华为OD上岸指南</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/my_website/"><i class="fa-fw fa fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/my_website/categories/Java"><i class="fa-fw fa fa-coffee"></i><span> Java面试题</span></a></div><div class="menus_item"><a class="site-page" href="/my_website/categories/OD%E6%9C%BA%E8%80%83"><i class="fa-fw fa fa-code"></i><span> OD机考真题</span></a></div><div class="menus_item"><a class="site-page" href="/my_website/categories/%E7%BB%8F%E9%AA%8C%E5%88%86%E4%BA%AB"><i class="fa-fw fa fa-book"></i><span> 上岸经验</span></a></div><div class="menus_item"><a class="site-page" href="/my_website/archives"><i class="fa-fw fa fa-archive"></i><span> 归档</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="site-info"><h1 id="site-title">华为OD上岸指南</h1></div><div id="scroll-down"><i class="fas fa-angle-down scroll-down-effects"></i></div></header><main class="layout" id="content-inner"><div class="recent-posts nc" id="recent-posts"><div class="recent-post-items"><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/my_website/2026/02/12/%E4%B8%8A%E5%B2%B8%E7%BB%8F%E9%AA%8C-%E5%8D%A0%E4%BD%8D/" title="华为OD上岸经验分享（更新中）">华为OD上岸经验分享（更新中）</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2026-02-12T05:00:00.000Z" title="发表于 2026-02-12 13:00:00">2026-02-12</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/my_website/categories/%E7%BB%8F%E9%AA%8C%E5%88%86%E4%BA%AB/">经验分享</a></span></div><div class="content">这里将分享上岸前辈的经验。 </div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/my_website/2026/02/12/OD%E6%9C%BA%E8%80%83%E7%9C%9F%E9%A2%98-%E5%8D%A0%E4%BD%8D/" title="OD机考真题汇总（更新中）">OD机考真题汇总（更新中）</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2026-02-12T04:00:00.000Z" title="发表于 2026-02-12 12:00:00">2026-02-12</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/my_website/categories/OD%E6%9C%BA%E8%80%83/">OD机考</a></span></div><div class="content">这里将汇总华为OD机考的真题。 </div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/my_website/2026/02/12/Java%E9%9D%A2%E8%AF%95%E9%A2%98%E7%B2%BE%E9%80%89-02/" title="Java面试题精选-02：基础语法与新特性">Java面试题精选-02：基础语法与新特性</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2026-02-12T03:00:00.000Z" title="发表于 2026-02-12 11:00:00">2026-02-12</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/my_website/categories/Java/">Java</a></span></div><div class="content">目录 重载和重写的区别 ConcurrentHashMap原如何保证的线程安全？ 了解Java的包装类型吗？为什么需要包装类？ 为什么JDK9要将String的底层实现由char[]改成byte[]? String, StringBuffer 和 StringBuilder区别 Java创建对象有几种方式？ final, finally, finalize 的区别 Java支持多继承吗？ 介绍下Java8的新特性？ 什么是反射？反射有哪些应用场景呢？   1. 重载和重写的区别 重载：发生在同一个类中，方法名相同、参数列表、返回类型、权限修饰符可以不同。 重写：发生在子类中，方法名相、参数列表、返回类型都相同，权限修饰符要大于父类方法，声明异常范围要小于父类方法，但是final和private修饰的方法不可重写。  2. ConcurrentHashMap原如何保证的线程安全？ JDK1.7：使用分段锁，将一个Map分为了16个段，每个段都是一个小的hashmap，每次操作只对其中一个段加锁。 JDK1.8：采用CAS+Synchronized保证线程安全，每次插入数据时判断在当...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/my_website/2026/02/12/Java%E9%9D%A2%E8%AF%95%E9%A2%98%E7%B2%BE%E9%80%89-01/" title="Java面试题精选-01：集合、多线程与JVM">Java面试题精选-01：集合、多线程与JVM</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2026-02-12T02:00:00.000Z" title="发表于 2026-02-12 10:00:00">2026-02-12</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/my_website/categories/Java/">Java</a></span></div><div class="content">目录 你了解的有哪些集合？ Arraylist和LinkedList的区别 HashMap的底层结构，put方法的具体操作过程 了解CurrentHashmap吗 谈谈Hashcode，＝＝和equals的区别 怎么创建多线程，三种创建方式的区别 线程池了解吗，说说线程池的具体工作过程 java中有哪些锁，简单说说它们之间的区别 jvm的内存模型 jvm的垃圾回收算法 双亲委派模型   1. 你了解的有哪些集合？（此处为笔记原始内容，建议后续补充详细回答） 2. Arraylist和LinkedList的区别（此处为笔记原始内容，建议后续补充详细回答） 3. HashMap的底层结构，put方法的具体操作过程（此处为笔记原始内容，建议后续补充详细回答） 4. 了解CurrentHashmap吗分段设计：ConcurrentHashMap 内部将整个哈希表分成多个独立的区段（Segments），每个区段实际上就是一个小的哈希表。不同的线程可以同时访问不同的区段，从而减小了并发操作时的冲突范围，提高了并发性能。 并发更新支持：ConcurrentHashMap 支持并发的更新操作，多...</div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="https://img.icons8.com/color/96/000000/programmer.png" onerror="this.onerror=null;this.src='/my_website/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">OD备考君</div><div class="author-info-description">专注华为OD机考、面试真题与经验分享</div><div class="site-data"><a href="/my_website/archives/"><div class="headline">文章</div><div class="length-num">4</div></a><a href="/my_website/tags/"><div class="headline">标签</div><div class="length-num">5</div></a><a href="/my_website/categories/"><div class="headline">分类</div><div class="length-num">3</div></a></div><a id="card-info-btn" href="#"><i class="fab fa-weixin"></i><span>加我获取真题</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/my_website/2026/02/12/%E4%B8%8A%E5%B2%B8%E7%BB%8F%E9%AA%8C-%E5%8D%A0%E4%BD%8D/" title="华为OD上岸经验分享（更新中）">华为OD上岸经验分享（更新中）</a><time datetime="2026-02-12T05:00:00.000Z" title="发表于 2026-02-12 13:00:00">2026-02-12</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/my_website/2026/02/12/OD%E6%9C%BA%E8%80%83%E7%9C%9F%E9%A2%98-%E5%8D%A0%E4%BD%8D/" title="OD机考真题汇总（更新中）">OD机考真题汇总（更新中）</a><time datetime="2026-02-12T04:00:00.000Z" title="发表于 2026-02-12 12:00:00">2026-02-12</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/my_website/2026/02/12/Java%E9%9D%A2%E8%AF%95%E9%A2%98%E7%B2%BE%E9%80%89-02/" title="Java面试题精选-02：基础语法与新特性">Java面试题精选-02：基础语法与新特性</a><time datetime="2026-02-12T03:00:00.000Z" title="发表于 2026-02-12 11:00:00">2026-02-12</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/my_website/2026/02/12/Java%E9%9D%A2%E8%AF%95%E9%A2%98%E7%B2%BE%E9%80%89-01/" title="Java面试题精选-01：集合、多线程与JVM">Java面试题精选-01：集合、多线程与JVM</a><time datetime="2026-02-12T02:00:00.000Z" title="发表于 2026-02-12 10:00:00">2026-02-12</time></div></div></div></div><div class="card-widget card-categories"><div class="item-headline">
+            <i class="fas fa-folder-open"></i>
+            <span>分类</span>
+            
+          </div>
+          <ul class="card-category-list" id="aside-cat-list">
+            <li class="card-category-list-item "><a class="card-category-list-link" href="/my_website/categories/Java/"><span class="card-category-list-name">Java</span><span class="card-category-list-count">2</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/my_website/categories/OD%E6%9C%BA%E8%80%83/"><span class="card-category-list-name">OD机考</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/my_website/categories/%E7%BB%8F%E9%AA%8C%E5%88%86%E4%BA%AB/"><span class="card-category-list-name">经验分享</span><span class="card-category-list-count">1</span></a></li>
+          </ul></div><div class="card-widget card-tags"><div class="item-headline"><i class="fas fa-tags"></i><span>标签</span></div><div class="card-tag-cloud"><a href="/my_website/tags/%E7%BB%8F%E9%AA%8C%E5%88%86%E4%BA%AB/" style="font-size: 1.1em; color: #999">经验分享</a> <a href="/my_website/tags/%E6%9C%BA%E8%80%83%E7%9C%9F%E9%A2%98/" style="font-size: 1.1em; color: #999">机考真题</a> <a href="/my_website/tags/%E9%9D%A2%E8%AF%95%E9%A2%98/" style="font-size: 1.3em; color: #99a1ac">面试题</a> <a href="/my_website/tags/Java/" style="font-size: 1.3em; color: #99a1ac">Java</a> <a href="/my_website/tags/%E5%8D%8E%E4%B8%BAOD/" style="font-size: 1.5em; color: #99a9bf">华为OD</a></div></div><div class="card-widget card-archives">
+    <div class="item-headline">
+      <i class="fas fa-archive"></i>
+      <span>归档</span>
       
     </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
-        
-          <a class="main-nav-link" href="/my_website/">Home</a>
-        
-          <a class="main-nav-link" href="/my_website/archives">Archives</a>
-        
-          <a class="main-nav-link" href="/my_website/">首页</a>
-        
-          <a class="main-nav-link" href="/my_website/categories/Java">Java面试题</a>
-        
-          <a class="main-nav-link" href="/my_website/categories/OD%E6%9C%BA%E8%80%83">OD机考真题</a>
-        
-          <a class="main-nav-link" href="/my_website/categories/%E7%BB%8F%E9%AA%8C%E5%88%86%E4%BA%AB">上岸经验</a>
-        
-          <a class="main-nav-link" href="/my_website/archives">归档</a>
-        
-      </nav>
-      <nav id="sub-nav">
-        
-        
-          <a class="nav-icon" href="/my_website/atom.xml" title="RSS 订阅"><span class="fa fa-rss"></span></a>
-        
-        <a class="nav-icon nav-search-btn" title="搜索"><span class="fa fa-search"></span></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="搜索"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://misayaone.github.io/my_website"></form>
-      </div>
-    </div>
-  </div>
-</header>
-
-      <div class="outer">
-        <section id="main">
   
-    <article id="post-上岸经验-占位" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/my_website/2026/02/12/%E4%B8%8A%E5%B2%B8%E7%BB%8F%E9%AA%8C-%E5%8D%A0%E4%BD%8D/" class="article-date">
-  <time class="dt-published" datetime="2026-02-12T05:00:00.000Z" itemprop="datePublished">2026-02-12</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/my_website/categories/%E7%BB%8F%E9%AA%8C%E5%88%86%E4%BA%AB/">经验分享</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/my_website/2026/02/12/%E4%B8%8A%E5%B2%B8%E7%BB%8F%E9%AA%8C-%E5%8D%A0%E4%BD%8D/">华为OD上岸经验分享（更新中）</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
+    <ul class="card-archive-list">
       
-        <p>这里将分享上岸前辈的经验。</p>
-
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/my_website/archives/2026/02/">
+            <span class="card-archive-list-date">
+              二月 2026
+            </span>
+            <span class="card-archive-list-count">4</span>
+          </a>
+        </li>
       
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://misayaone.github.io/my_website/2026/02/12/%E4%B8%8A%E5%B2%B8%E7%BB%8F%E9%AA%8C-%E5%8D%A0%E4%BD%8D/" data-id="cmlj6pss4000pwfnr82tmhvqw" data-title="华为OD上岸经验分享（更新中）" class="article-share-link"><span class="fa fa-share">分享</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/my_website/tags/%E5%8D%8E%E4%B8%BAOD/" rel="tag">华为OD</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/my_website/tags/%E7%BB%8F%E9%AA%8C%E5%88%86%E4%BA%AB/" rel="tag">经验分享</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-OD机考真题-占位" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/my_website/2026/02/12/OD%E6%9C%BA%E8%80%83%E7%9C%9F%E9%A2%98-%E5%8D%A0%E4%BD%8D/" class="article-date">
-  <time class="dt-published" datetime="2026-02-12T04:00:00.000Z" itemprop="datePublished">2026-02-12</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/my_website/categories/OD%E6%9C%BA%E8%80%83/">OD机考</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/my_website/2026/02/12/OD%E6%9C%BA%E8%80%83%E7%9C%9F%E9%A2%98-%E5%8D%A0%E4%BD%8D/">OD机考真题汇总（更新中）</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>这里将汇总华为OD机考的真题。</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://misayaone.github.io/my_website/2026/02/12/OD%E6%9C%BA%E8%80%83%E7%9C%9F%E9%A2%98-%E5%8D%A0%E4%BD%8D/" data-id="cmlj6psrr0004wfnrcbcl56gu" data-title="OD机考真题汇总（更新中）" class="article-share-link"><span class="fa fa-share">分享</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/my_website/tags/%E5%8D%8E%E4%B8%BAOD/" rel="tag">华为OD</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/my_website/tags/%E6%9C%BA%E8%80%83%E7%9C%9F%E9%A2%98/" rel="tag">机考真题</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-Java面试题精选-02" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/my_website/2026/02/12/Java%E9%9D%A2%E8%AF%95%E9%A2%98%E7%B2%BE%E9%80%89-02/" class="article-date">
-  <time class="dt-published" datetime="2026-02-12T03:00:00.000Z" itemprop="datePublished">2026-02-12</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/my_website/categories/Java/">Java</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/my_website/2026/02/12/Java%E9%9D%A2%E8%AF%95%E9%A2%98%E7%B2%BE%E9%80%89-02/">Java面试题精选-02：基础语法与新特性</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h1 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h1><ol>
-<li>重载和重写的区别</li>
-<li>ConcurrentHashMap原如何保证的线程安全？</li>
-<li>了解Java的包装类型吗？为什么需要包装类？</li>
-<li>为什么JDK9要将String的底层实现由char[]改成byte[]?</li>
-<li>String, StringBuffer 和 StringBuilder区别</li>
-<li>Java创建对象有几种方式？</li>
-<li>final, finally, finalize 的区别</li>
-<li>Java支持多继承吗？</li>
-<li>介绍下Java8的新特性？</li>
-<li>什么是反射？反射有哪些应用场景呢？</li>
-</ol>
-<hr>
-<h2 id="1-重载和重写的区别"><a href="#1-重载和重写的区别" class="headerlink" title="1. 重载和重写的区别"></a>1. 重载和重写的区别</h2><ul>
-<li><strong>重载</strong>：发生在同一个类中，方法名相同、参数列表、返回类型、权限修饰符可以不同。</li>
-<li><strong>重写</strong>：发生在子类中，方法名相、参数列表、返回类型都相同，权限修饰符要大于父类方法，声明异常范围要小于父类方法，但是final和private修饰的方法不可重写。</li>
-</ul>
-<h2 id="2-ConcurrentHashMap原如何保证的线程安全？"><a href="#2-ConcurrentHashMap原如何保证的线程安全？" class="headerlink" title="2. ConcurrentHashMap原如何保证的线程安全？"></a>2. ConcurrentHashMap原如何保证的线程安全？</h2><ul>
-<li><strong>JDK1.7</strong>：使用分段锁，将一个Map分为了16个段，每个段都是一个小的hashmap，每次操作只对其中一个段加锁。</li>
-<li><strong>JDK1.8</strong>：采用CAS+Synchronized保证线程安全，每次插入数据时判断在当前数组下标是否是第一次插入，是就通过CAS方式插入，然后判断f.hash是否&#x3D;-1，是的话就说明其他线程正在进行扩容，当前线程也会参与扩容；删除方法用了synchronized修饰，保证并发下移除元素安全。</li>
-</ul>
-<h2 id="3-了解Java的包装类型吗？为什么需要包装类？"><a href="#3-了解Java的包装类型吗？为什么需要包装类？" class="headerlink" title="3. 了解Java的包装类型吗？为什么需要包装类？"></a>3. 了解Java的包装类型吗？为什么需要包装类？</h2><p>Java 是一种面向对象语言，很多地方都需要使用对象而不是基本数据类型。比如，在集合类中，我们是无法将 int 、double 等类型放进去的。因为集合的容器要求元素是 Object 类型。</p>
-<p>为了让基本类型也具有对象的特征，就出现了包装类型。相当于将基本类型包装起来，使得它具有了对象的性质，并且为其添加了属性和方法，丰富了基本类型的操作。</p>
-<h2 id="4-为什么JDK9要将String的底层实现由char-改成byte"><a href="#4-为什么JDK9要将String的底层实现由char-改成byte" class="headerlink" title="4. 为什么JDK9要将String的底层实现由char[]改成byte[]?"></a>4. 为什么JDK9要将String的底层实现由char[]改成byte[]?</h2><p>主要是为了节约String占用的内存。</p>
-<p>在大部分Java程序的堆内存中，String占用的空间最大，并且绝大多数String只有Latin-1字符，这些Latin-1字符只需要1个字节就够了。</p>
-<p>而在JDK9之前，JVM因为String使用char数组存储，每个char占2个字节，所以即使字符串只需要1字节，它也要按照2字节进行分配，浪费了一半的内存空间。</p>
-<p>到了JDK9之后，对于每个字符串，会先判断它是不是只有Latin-1字符，如果是，就按照1字节的规格进行分配内存，如果不是，就按照2字节的规格进行分配，这样便提高了内存使用率，同时GC次数也会减少，提升效率。</p>
-<p>不过Latin-1编码集支持的字符有限，比如不支持中文字符，因此对于中文字符串，用的是UTF16编码（两个字节），所以用byte[]和char[]实现没什么区别。</p>
-<h2 id="5-String-StringBuffer-和-StringBuilder区别"><a href="#5-String-StringBuffer-和-StringBuilder区别" class="headerlink" title="5. String, StringBuffer 和 StringBuilder区别"></a>5. String, StringBuffer 和 StringBuilder区别</h2><p><strong>1. 可变性</strong></p>
-<ul>
-<li>String 不可变</li>
-<li>StringBuffer 和 StringBuilder 可变</li>
-</ul>
-<p><strong>2. 线程安全</strong></p>
-<ul>
-<li>String 不可变，因此是线程安全的</li>
-<li>StringBuilder 不是线程安全的</li>
-<li>StringBuffer 是线程安全的，内部使用 synchronized 进行同步</li>
-</ul>
-<h2 id="6-Java创建对象有几种方式？"><a href="#6-Java创建对象有几种方式？" class="headerlink" title="6. Java创建对象有几种方式？"></a>6. Java创建对象有几种方式？</h2><p>Java创建对象有以下几种方式：</p>
-<ol>
-<li>用new语句创建对象。</li>
-<li>使用反射，使用Class.newInstance()创建对象。</li>
-<li>调用对象的clone()方法。</li>
-<li>运用反序列化手段，调用java.io.ObjectInputStream对象的readObject()方法。</li>
-</ol>
-<h2 id="7-final-finally-finalize-的区别"><a href="#7-final-finally-finalize-的区别" class="headerlink" title="7. final, finally, finalize 的区别"></a>7. final, finally, finalize 的区别</h2><ul>
-<li><strong>final</strong>：用于修饰属性、方法和类, 分别表示属性不能被重新赋值，方法不可被覆盖，类不可被继承。</li>
-<li><strong>finally</strong>：是异常处理语句结构的一部分，一般以try-catch-finally出现，finally代码块表示总是被执行。</li>
-<li><strong>finalize</strong>：是Object类的一个方法，该方法一般由垃圾回收器来调用，当我们调用System.gc()方法的时候，由垃圾回收器调用finalize()方法，回收垃圾，JVM并不保证此方法总被调用。</li>
-</ul>
-<h2 id="8-Java支持多继承吗？"><a href="#8-Java支持多继承吗？" class="headerlink" title="8. Java支持多继承吗？"></a>8. Java支持多继承吗？</h2><p>java中，类不支持多继承。接口才支持多继承。接口的作用是拓展对象功能。当一个子接口继承了多个父接口时，说明子接口拓展了多个功能。当一个类实现该接口时，就拓展了多个的功能。</p>
-<p><strong>Java不支持多继承的原因</strong>：<br>出于安全性的考虑，如果子类继承的多个父类里面有相同的方法或者属性，子类将不知道具体要继承哪个。<br>Java提供了接口和内部类以达到实现多继承功能，弥补单继承的缺陷。</p>
-<h2 id="9-介绍下Java8的新特性？"><a href="#9-介绍下Java8的新特性？" class="headerlink" title="9. 介绍下Java8的新特性？"></a>9. 介绍下Java8的新特性？</h2><ul>
-<li><strong>Lambda 表达式</strong>：Lambda允许把函数作为一个方法的参数</li>
-<li><strong>Stream API</strong> ：新添加的Stream API（java.util.stream） 把真正的函数式编程风格引入到Java中</li>
-<li><strong>默认方法</strong>：默认方法就是一个在接口里面有了一个实现的方法。</li>
-<li><strong>Optional 类</strong> ：Optional 类已经成为 Java 8 类库的一部分，用来解决空指针异常。</li>
-<li><strong>Date Time API</strong> ：加强对日期与时间的处理。</li>
-</ul>
-<h2 id="10-什么是反射？反射有哪些应用场景呢？"><a href="#10-什么是反射？反射有哪些应用场景呢？" class="headerlink" title="10. 什么是反射？反射有哪些应用场景呢？"></a>10. 什么是反射？反射有哪些应用场景呢？</h2><p>动态获取的信息以及动态调用对象的方法的功能称为Java语言的反射机制。</p>
-<p>在运行状态中，对于任意一个类，能够知道这个类的所有属性和方法。对于任意一个对象，能够调用它的任意一个方法和属性。</p>
-<p><strong>应用场景</strong>：</p>
-<ul>
-<li>JDBC连接数据库时使用Class.forName()通过反射加载数据库的驱动程序</li>
-<li>Eclispe、IDEA等开发工具利用反射动态解析对象的类型与结构，动态提示对象的属性和方法</li>
-<li>Web服务器中利用反射调用了Sevlet的service方法</li>
-<li>JDK动态代理底层依赖反射实现</li>
-</ul>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://misayaone.github.io/my_website/2026/02/12/Java%E9%9D%A2%E8%AF%95%E9%A2%98%E7%B2%BE%E9%80%89-02/" data-id="cmlj6psrn0001wfnr1mkna2mm" data-title="Java面试题精选-02：基础语法与新特性" class="article-share-link"><span class="fa fa-share">分享</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/my_website/tags/Java/" rel="tag">Java</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/my_website/tags/%E5%8D%8E%E4%B8%BAOD/" rel="tag">华为OD</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/my_website/tags/%E9%9D%A2%E8%AF%95%E9%A2%98/" rel="tag">面试题</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-Java面试题精选-01" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/my_website/2026/02/12/Java%E9%9D%A2%E8%AF%95%E9%A2%98%E7%B2%BE%E9%80%89-01/" class="article-date">
-  <time class="dt-published" datetime="2026-02-12T02:00:00.000Z" itemprop="datePublished">2026-02-12</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/my_website/categories/Java/">Java</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/my_website/2026/02/12/Java%E9%9D%A2%E8%AF%95%E9%A2%98%E7%B2%BE%E9%80%89-01/">Java面试题精选-01：集合、多线程与JVM</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h1 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h1><ol>
-<li>你了解的有哪些集合？</li>
-<li>Arraylist和LinkedList的区别</li>
-<li>HashMap的底层结构，put方法的具体操作过程</li>
-<li>了解CurrentHashmap吗</li>
-<li>谈谈Hashcode，＝＝和equals的区别</li>
-<li>怎么创建多线程，三种创建方式的区别</li>
-<li>线程池了解吗，说说线程池的具体工作过程</li>
-<li>java中有哪些锁，简单说说它们之间的区别</li>
-<li>jvm的内存模型</li>
-<li>jvm的垃圾回收算法</li>
-<li>双亲委派模型</li>
-</ol>
-<hr>
-<h2 id="1-你了解的有哪些集合？"><a href="#1-你了解的有哪些集合？" class="headerlink" title="1. 你了解的有哪些集合？"></a>1. 你了解的有哪些集合？</h2><p>（此处为笔记原始内容，建议后续补充详细回答）</p>
-<h2 id="2-Arraylist和LinkedList的区别"><a href="#2-Arraylist和LinkedList的区别" class="headerlink" title="2. Arraylist和LinkedList的区别"></a>2. Arraylist和LinkedList的区别</h2><p>（此处为笔记原始内容，建议后续补充详细回答）</p>
-<h2 id="3-HashMap的底层结构，put方法的具体操作过程"><a href="#3-HashMap的底层结构，put方法的具体操作过程" class="headerlink" title="3. HashMap的底层结构，put方法的具体操作过程"></a>3. HashMap的底层结构，put方法的具体操作过程</h2><p>（此处为笔记原始内容，建议后续补充详细回答）</p>
-<h2 id="4-了解CurrentHashmap吗"><a href="#4-了解CurrentHashmap吗" class="headerlink" title="4. 了解CurrentHashmap吗"></a>4. 了解CurrentHashmap吗</h2><p><strong>分段设计</strong>：ConcurrentHashMap 内部将整个哈希表分成多个独立的区段（Segments），每个区段实际上就是一个小的哈希表。不同的线程可以同时访问不同的区段，从而减小了并发操作时的冲突范围，提高了并发性能。</p>
-<p><strong>并发更新支持</strong>：ConcurrentHashMap 支持并发的更新操作，多个线程可以同时进行插入、删除、更新等操作，而无需对整个哈希表进行锁定。这是通过在每个区段上使用独立的锁来实现的，只有当两个线程试图同时修改同一个区段时才需要进行同步。</p>
-<p><strong>弱一致性</strong>：ConcurrentHashMap 提供了弱一致性的特性，即对于读操作来说，会反映出最近更新的数据，但无法保证在读操作期间哈希表不发生变化。这种折衷可以提高并发性能，但需要在使用时注意数据的一致性需求。</p>
-<p><strong>支持高效迭代</strong>：ConcurrentHashMap 的迭代器是弱一致性的，允许在迭代过程中哈希表发生变化。这样可以避免在迭代期间加锁，提高了迭代的性能。</p>
-<h2 id="5-谈谈Hashcode，＝＝和equals的区别"><a href="#5-谈谈Hashcode，＝＝和equals的区别" class="headerlink" title="5. 谈谈Hashcode，＝＝和equals的区别"></a>5. 谈谈Hashcode，＝＝和equals的区别</h2><p>（此处为笔记原始内容，建议后续补充详细回答）</p>
-<h2 id="6-怎么创建多线程，三种创建方式的区别"><a href="#6-怎么创建多线程，三种创建方式的区别" class="headerlink" title="6. 怎么创建多线程，三种创建方式的区别"></a>6. 怎么创建多线程，三种创建方式的区别</h2><h3 id="方式一：继承-Thread-类"><a href="#方式一：继承-Thread-类" class="headerlink" title="方式一：继承 Thread 类"></a>方式一：继承 Thread 类</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">MyThread</span> <span class="keyword">extends</span> <span class="title class_">Thread</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">run</span><span class="params">()</span>&#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;打印---测试1&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Main</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="keyword">new</span> <span class="title class_">MyThread</span>().start();<span class="comment">//创建并启动线程</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="方式二：实现-Runnable-接口"><a href="#方式二：实现-Runnable-接口" class="headerlink" title="方式二：实现 Runnable 接口"></a>方式二：实现 Runnable 接口</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">MyThread2</span> <span class="keyword">implements</span> <span class="title class_">Runnable</span> &#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">run</span><span class="params">()</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;打印---测试Runnable&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Main2</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="comment">//创建并启动线程</span></span><br><span class="line">        MyThread2 myThread2=<span class="keyword">new</span> <span class="title class_">MyThread2</span>();</span><br><span class="line">        Thread thread=<span class="keyword">new</span> <span class="title class_">Thread</span>(myThread2);</span><br><span class="line">        thread.start();</span><br><span class="line">        <span class="comment">// 或者 new Thread（new MyThread2()）.start()；</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="方式三：实现-Callable-接口"><a href="#方式三：实现-Callable-接口" class="headerlink" title="方式三：实现 Callable 接口"></a>方式三：实现 Callable 接口</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">MyThread3</span> <span class="keyword">implements</span> <span class="title class_">Callable</span> &#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> Object <span class="title function_">call</span><span class="params">()</span> <span class="keyword">throws</span> Exception &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;打印---Callable方式&quot;</span>);</span><br><span class="line">        <span class="keyword">return</span> <span class="number">10</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Main3</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> ExecutionException, InterruptedException, TimeoutException &#123;</span><br><span class="line">        Callable callable=<span class="keyword">new</span> <span class="title class_">MyThread3</span>();</span><br><span class="line">        FutureTask task=<span class="keyword">new</span> <span class="title class_">FutureTask</span>(callable);</span><br><span class="line">        <span class="keyword">new</span> <span class="title class_">Thread</span>(task).start();</span><br><span class="line">        System.out.println(task.get());</span><br><span class="line">        Thread.sleep(<span class="number">10</span>);<span class="comment">//等待线程执行结束</span></span><br><span class="line">        <span class="comment">//task.get() 获取call（）的返回值，若调用时call（）方法未返回，则阻塞线程等待返回值</span></span><br><span class="line">        <span class="comment">//get的传入参数为等待时间，超时抛出超时异常；传入参数为空时，则不设超时，一直等待</span></span><br><span class="line">        System.out.println(task.get(<span class="number">100L</span>, TimeUnit.MILLISECONDS));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="7-线程池了解吗，说说线程池的具体工作过程"><a href="#7-线程池了解吗，说说线程池的具体工作过程" class="headerlink" title="7. 线程池了解吗，说说线程池的具体工作过程"></a>7. 线程池了解吗，说说线程池的具体工作过程</h2><p>（此处为笔记原始内容，建议后续补充详细回答）</p>
-<h2 id="8-java中有哪些锁，简单说说它们之间的区别"><a href="#8-java中有哪些锁，简单说说它们之间的区别" class="headerlink" title="8. java中有哪些锁，简单说说它们之间的区别"></a>8. java中有哪些锁，简单说说它们之间的区别</h2><p>（此处为笔记原始内容，建议后续补充详细回答）</p>
-<h2 id="9-jvm的内存模型"><a href="#9-jvm的内存模型" class="headerlink" title="9. jvm的内存模型"></a>9. jvm的内存模型</h2><ul>
-<li><strong>堆（Heap）</strong>：线程共享。所有的对象实例以及数组都要在堆上分配。回收器主要管理的对象。</li>
-<li><strong>方法区（Method Area）</strong>：线程共享。存储类信息、常量、静态变量、即时编译器编译后的代码。</li>
-<li><strong>方法栈（JVM Stack）</strong>：线程私有。存储局部变量表、操作栈、动态链接、方法出口，对象指针。</li>
-<li><strong>本地方法栈（Native Method Stack）</strong>：线程私有。为虚拟机使用到的Native 方法服务。如Java使用c或者c++编写的接口服务时，代码在此区运行。</li>
-<li><strong>程序计数器（Program Counter Register）</strong>：线程私有。有些文章也翻译成PC寄存器（PC Register），同一个东西。它可以看作是当前线程所执行的字节码的行号指示器。指向下一条要执行的指令。</li>
-</ul>
-<h2 id="10-jvm的垃圾回收算法"><a href="#10-jvm的垃圾回收算法" class="headerlink" title="10. jvm的垃圾回收算法"></a>10. jvm的垃圾回收算法</h2><ol>
-<li><strong>标记-清除算法</strong></li>
-<li><strong>复制算法</strong></li>
-<li><strong>标记-整理算法</strong></li>
-<li><strong>分代收集算法</strong></li>
-</ol>
-<h2 id="11-双亲委派模型"><a href="#11-双亲委派模型" class="headerlink" title="11. 双亲委派模型"></a>11. 双亲委派模型</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">protected</span> Class&lt;?&gt; loadClass(String name, <span class="type">boolean</span> resolve)</span><br><span class="line">        <span class="keyword">throws</span> ClassNotFoundException</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">synchronized</span> (getClassLoadingLock(name)) &#123;</span><br><span class="line">            <span class="comment">// First, check if the class has already been loaded</span></span><br><span class="line">            Class&lt;?&gt; c = findLoadedClass(name);</span><br><span class="line">            <span class="keyword">if</span> (c == <span class="literal">null</span>) &#123;</span><br><span class="line">                <span class="type">long</span> <span class="variable">t0</span> <span class="operator">=</span> System.nanoTime();</span><br><span class="line">                <span class="keyword">try</span> &#123;</span><br><span class="line">                    <span class="keyword">if</span> (parent != <span class="literal">null</span>) &#123;</span><br><span class="line">                        c = parent.loadClass(name, <span class="literal">false</span>);</span><br><span class="line">                    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                        c = findBootstrapClassOrNull(name);</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125; <span class="keyword">catch</span> (ClassNotFoundException e) &#123;</span><br><span class="line">                    <span class="comment">// ClassNotFoundException thrown if class not found</span></span><br><span class="line">                    <span class="comment">// from the non-null parent class loader</span></span><br><span class="line">                &#125;</span><br><span class="line"></span><br><span class="line">                <span class="keyword">if</span> (c == <span class="literal">null</span>) &#123;</span><br><span class="line">                    <span class="comment">// If still not found, then invoke findClass in order</span></span><br><span class="line">                    <span class="comment">// to find the class.</span></span><br><span class="line">                    <span class="type">long</span> <span class="variable">t1</span> <span class="operator">=</span> System.nanoTime();</span><br><span class="line">                    c = findClass(name);</span><br><span class="line"></span><br><span class="line">                    <span class="comment">// this is the defining class loader; record the stats</span></span><br><span class="line">                    sun.misc.PerfCounter.getParentDelegationTime().addTime(t1 - t0);</span><br><span class="line">                    sun.misc.PerfCounter.getFindClassTime().addElapsedTimeFrom(t1);</span><br><span class="line">                    sun.misc.PerfCounter.getFindClasses().increment();</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (resolve) &#123;</span><br><span class="line">                resolveClass(c);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">return</span> c;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://misayaone.github.io/my_website/2026/02/12/Java%E9%9D%A2%E8%AF%95%E9%A2%98%E7%B2%BE%E9%80%89-01/" data-id="cmlj6psrh0000wfnr9a788l5j" data-title="Java面试题精选-01：集合、多线程与JVM" class="article-share-link"><span class="fa fa-share">分享</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/my_website/tags/Java/" rel="tag">Java</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/my_website/tags/%E5%8D%8E%E4%B8%BAOD/" rel="tag">华为OD</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/my_website/tags/%E9%9D%A2%E8%AF%95%E9%A2%98/" rel="tag">面试题</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-
-
-</section>
-        
-          <aside id="sidebar">
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">分类</h3>
-    <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/my_website/categories/Java/">Java</a></li><li class="category-list-item"><a class="category-list-link" href="/my_website/categories/OD%E6%9C%BA%E8%80%83/">OD机考</a></li><li class="category-list-item"><a class="category-list-link" href="/my_website/categories/%E7%BB%8F%E9%AA%8C%E5%88%86%E4%BA%AB/">经验分享</a></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">标签</h3>
-    <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/my_website/tags/Java/" rel="tag">Java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/my_website/tags/%E5%8D%8E%E4%B8%BAOD/" rel="tag">华为OD</a></li><li class="tag-list-item"><a class="tag-list-link" href="/my_website/tags/%E6%9C%BA%E8%80%83%E7%9C%9F%E9%A2%98/" rel="tag">机考真题</a></li><li class="tag-list-item"><a class="tag-list-link" href="/my_website/tags/%E7%BB%8F%E9%AA%8C%E5%88%86%E4%BA%AB/" rel="tag">经验分享</a></li><li class="tag-list-item"><a class="tag-list-link" href="/my_website/tags/%E9%9D%A2%E8%AF%95%E9%A2%98/" rel="tag">面试题</a></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">标签云</h3>
-    <div class="widget tagcloud">
-      <a href="/my_website/tags/Java/" style="font-size: 15px;">Java</a> <a href="/my_website/tags/%E5%8D%8E%E4%B8%BAOD/" style="font-size: 20px;">华为OD</a> <a href="/my_website/tags/%E6%9C%BA%E8%80%83%E7%9C%9F%E9%A2%98/" style="font-size: 10px;">机考真题</a> <a href="/my_website/tags/%E7%BB%8F%E9%AA%8C%E5%88%86%E4%BA%AB/" style="font-size: 10px;">经验分享</a> <a href="/my_website/tags/%E9%9D%A2%E8%AF%95%E9%A2%98/" style="font-size: 15px;">面试题</a>
-    </div>
-  </div>
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">归档</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/my_website/archives/2026/02/">二月 2026</a></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">最新文章</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="/my_website/2026/02/12/%E4%B8%8A%E5%B2%B8%E7%BB%8F%E9%AA%8C-%E5%8D%A0%E4%BD%8D/">华为OD上岸经验分享（更新中）</a>
-          </li>
-        
-          <li>
-            <a href="/my_website/2026/02/12/OD%E6%9C%BA%E8%80%83%E7%9C%9F%E9%A2%98-%E5%8D%A0%E4%BD%8D/">OD机考真题汇总（更新中）</a>
-          </li>
-        
-          <li>
-            <a href="/my_website/2026/02/12/Java%E9%9D%A2%E8%AF%95%E9%A2%98%E7%B2%BE%E9%80%89-02/">Java面试题精选-02：基础语法与新特性</a>
-          </li>
-        
-          <li>
-            <a href="/my_website/2026/02/12/Java%E9%9D%A2%E8%AF%95%E9%A2%98%E7%B2%BE%E9%80%89-01/">Java面试题精选-01：集合、多线程与JVM</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
-
-  
-</aside>
-        
-      </div>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      
-      &copy; 2026 OD备考君<br>
-      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
-    </div>
-  </div>
-</footer>
-
-    </div>
-    <nav id="mobile-nav">
-  
-    <a href="/my_website/" class="mobile-nav-link">Home</a>
-  
-    <a href="/my_website/archives" class="mobile-nav-link">Archives</a>
-  
-    <a href="/my_website/" class="mobile-nav-link">首页</a>
-  
-    <a href="/my_website/categories/Java" class="mobile-nav-link">Java面试题</a>
-  
-    <a href="/my_website/categories/OD%E6%9C%BA%E8%80%83" class="mobile-nav-link">OD机考真题</a>
-  
-    <a href="/my_website/categories/%E7%BB%8F%E9%AA%8C%E5%88%86%E4%BA%AB" class="mobile-nav-link">上岸经验</a>
-  
-    <a href="/my_website/archives" class="mobile-nav-link">归档</a>
-  
-</nav>
-    
-
-
-<script src="/my_website/js/jquery-3.6.4.min.js"></script>
-
-
-
-  
-<script src="/my_website/fancybox/jquery.fancybox.min.js"></script>
-
-
-
-
-<script src="/my_website/js/script.js"></script>
-
-
-
-
-
-  </div>
-</body>
-</html>
+    </ul>
+  </div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站信息</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">4</div></div><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">本站总浏览量 :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2026-02-12T08:16:35.910Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer"><div class="footer-other"><div class="footer-copyright"><span class="copyright">&copy;&nbsp;2025 - 2026 By OD备考君</span><span class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 7.3.0</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.5.4</a></span></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/my_website/js/utils.js?v=5.5.4"></script><script src="/my_website/js/main.js?v=5.5.4"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
