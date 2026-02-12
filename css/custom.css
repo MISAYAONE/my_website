@@ -1,22 +1,21 @@
-/* 天青色背景 */
+/* 红色背景 */
 body {
-  background-color: #E6F7F8 !important; /* 淡天青色 */
+  background-color: #FFCCCC !important; /* 淡红色 */
   background-image: none !important;
 }
 
 #web_bg {
-  background: #E6F7F8 !important;
+  background: #FFCCCC !important;
   background-image: none !important;
 }
 
-/* 调整卡片透明度，让背景透出来一点，或者保持白色 */
+/* 调整卡片透明度 */
 .layout_page > div, .layout_post > div {
     background: rgba(255, 255, 255, 0.9) !important;
 }
 
-/* 去除可能残留的动画 */
+/* 去除动画 */
 .wow {
     visibility: visible !important;
     animation-name: none !important;
 }
-
